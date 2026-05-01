@@ -207,9 +207,6 @@ const main = async () => {
         id,
         webUrl,
         pubBody,
-        isHtml,
-        single,
-        state,
         author,
         startMethod,
         startPwd,
@@ -221,6 +218,8 @@ const main = async () => {
         pwdStyle,
         pwdTheme,
     } = ppconfig.desktop
+    // get windows config
+    const winConfig = ppconfig.more.windows
     console.log('name:', name)
     console.log('version:', version)
     console.log('id:', id)
@@ -238,7 +237,6 @@ const main = async () => {
         pwdTheme,
         winConfig.url
     )
-    const winConfig = ppconfig.more.windows
     // console.log('password:', password)
     await updatePackage(name, showName, author, version, id)
     // update config.json
